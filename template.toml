@@ -1,0 +1,6 @@
+name = "beamer"
+version = "1.0.0"
+description = "Présentation Beamer — thème Madrid, colour themes seahorse/dolphin, footer branding (basé sur latex-templates)."
+authors = ["Ivan23BG"]
+repository = "https://github.com/Ivan23BG/beamer.git"
+shared_assets = "shared"

@@ -1,0 +1,61 @@
+\documentclass{beamer}
+\usetheme{Madrid}
+
+% ---- latex_handler theme support ------------------------------------------
+% Beamer has its own colour themes, so switch those in the preamble as well.
+\providecommand{\lhtheme}{light}
+\def\lhdarkvalue{dark}
+\ifx\lhtheme\lhdarkvalue
+  \usecolortheme{dolphin}
+\else
+  \usecolortheme{seahorse}
+\fi
+\definecolor{lhlightaccent}{HTML}{1F4E79}
+\definecolor{lhdarkaccent}{HTML}{E8A33D}
+\colorlet{lhaccent}{lhlightaccent}
+\def\lhthemevalue{Light}
+\ifx\lhtheme\lhdarkvalue
+  \colorlet{lhaccent}{lhdarkaccent}
+  \def\lhthemevalue{Dark}
+\fi
+\providecommand{\lhbar}{}
+\providecommand{\lhfootertext}{}
+\InputIfFileExists{lh-branding}{}{}
+% ---------------------------------------------------------------------------
+
+\title{Presentation Variation}
+\subtitle{Built from \texttt{latex-templates}}
+\author{Your Name}
+\date{\today}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}{Outline}
+  \begin{itemize}
+    \item Why a multi-document template is convenient
+    \item How \texttt{latex\_handler} discovers documents
+    \item How the light and dark themes differ
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Discovery}
+  A file named \texttt{main.tex} or \texttt{*\_main.tex} under \texttt{src/} is
+  compiled automatically. Compile this deck with:
+  \begin{verbatim}
+    latex_handler compile --file src/beamer_main.tex
+  \end{verbatim}
+\end{frame}
+
+\begin{frame}{Theme}
+  The active theme is \alert{\lhthemevalue}. The \texttt{dolphin} colour theme is
+  used for dark builds and \texttt{seahorse} for light builds.
+  \lhbar
+\end{frame}
+
+\begin{frame}{Summary}
+  \lhfootertext
+\end{frame}
+
+\end{document}
